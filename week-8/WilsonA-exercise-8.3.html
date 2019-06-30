@@ -1,0 +1,187 @@
+<!--
+============================================
+; Title: wilsonA-exercise-8.3.html
+; Author: Professor Krasso
+; Date: 29 January 2019
+; Modified By: Aaron Wilson
+; Description: JQuery toggle and tabular
+; data controlled dynamically with alert box.
+;===========================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>WilsonA Exercise 8.3</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <!-- you will need to the href to point to your root directories css file -->
+  <link rel="stylesheet" href="../site.css">
+
+  <style>
+  /**
+  -- CSS rules for Exercise 8.3 go below here. --
+  **/
+
+  body {
+    position: relative;
+    top: 0;
+    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
+  }
+
+  #container {
+    position: relative;
+    top: 0;
+    display: flex;
+    justify-content: flex-start;
+    border-top: 50px solid steelblue;
+    padding: 20px 0 0 0;
+  }
+
+  #container > section {
+    display: block;
+    width: 320px;
+    border: 4px solid steelblue;
+    border-radius: 2px;
+    margin: 0 0 0 20px;
+    padding: 20px;
+  }
+
+  h2 {
+    position: relative;
+    top: 0;
+    text-align: center;
+    color: steelblue;
+  }
+
+  section > p {
+    font-size: .8em;
+  }
+
+  button {
+    position: relative;
+    width: 125px;
+    height: 25px;
+    background: steelblue;
+    color: white;
+    font-weight: 500;
+    border-radius: 2px;
+  }
+
+  #links-info {
+    position: relative;
+    text-transform: capitalize;
+  }
+  table {
+    margin: 0 0 0 20px;
+  }
+  </style>
+
+</head>
+<body>
+  <div id="container">
+    <section>
+      <h2>Part A | Toggle This Data</h2>
+      <p id="content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consequat nisi vel vehicula lacinia.
+        Vestibulum blandit sed metus sed tempor. Phasellus venenatis convallis egestas. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Proin lectus libero, feugiat vel mollis vitae, euismod aliquet
+        lectus. Aliquam eleifend ornare massa, id placerat ligula. Curabitur enim lectus, auctor in tellus sit
+        amet, vulputate congue odio. Vivamus ipsum ex, lobortis pharetra vestibulum elementum, ultrices eu eros.
+        Cras sollicitudin, tellus vel condimentum iaculis, mi felis gravida lorem, pulvinar rutrum tellus nisl
+        ac ipsum. Donec eget metus at eros volutpat venenatis a vel lectus.
+      </p>
+
+      <button id="toggle">Toggle</button>
+    </section>
+
+    <section>
+      <h2>Part B | Dynamic Tabular Data</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+
+        <tbody id="fruit-data">
+          <!-- Dynamic content goes in here -->
+        </tbody>
+      </table>
+
+      <p id="links-info">Click on the fruit types in the table above.</p>
+
+    </section>
+  </div>
+
+<script type="text/javascript">
+
+  // Use JQuery to
+  $(document).ready(function(){
+
+    //
+    $("#toggle").click(function(){
+
+      // Allow JQuery to perform the toggle method on any data located within
+      $("#content").toggle();
+    });
+  });
+
+    // Create a mutable fruit variable of which is currently set to null.
+    let fruit = null;
+
+    // Build a showFruit function in which will pass in a null mutable variable named fruit.
+    function showFruit(array) {
+
+    // Create an array of fruit objects with two properties/fields: id and type.
+    array = [
+        {
+            id: 1,
+            type: 'Tangerine'
+        },
+        {
+            id: 2,
+            type: 'Apple'
+        },
+        {
+            id: 3,
+            type: 'Pear'
+        },
+        {
+            id: 4,
+            type: 'Peach'
+        },
+        {
+            id: 5,
+            type: 'Strawberry'
+        }
+    ];
+
+    // Build a foreach loop that will iterate through the fruit objects array on each of the two properties.
+    array.forEach(function(arr) {
+
+      // Create a mutable variable named data to concatenate strings of both HTML elements and the properties from the fruit object.
+      let data = "<tr><td><a href='#' id='fruitId" + arr.id + "'>" + arr.id + "</a></td><td>" + arr.type + "</td></tr>";
+
+      // Use JQuery to attach through the append method the variable named data.
+      $("#fruit-data").append(data);
+
+      // Through JQuery, trigger a click event off of the array of fruit objects type property.
+      $("#fruitId" + arr.id).click(function() {
+
+        // Activate the Alert Box to display each fruit object and its properties.
+        alert("This is fruit Object:  {id: " + arr.id + ",  type: " + arr.type + "}");
+      });
+    });
+  }
+
+  // Call the showFruit function to produce the desired output of data.
+  showFruit(fruit);
+</script>
+</body>
+</html>

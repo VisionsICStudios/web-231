@@ -1,0 +1,441 @@
+/* This is the CSS3 'bio' File For Dominic's BioSite */
+
+/* I'm using CSS variables on the root with the page coloring so it is preset */
+
+:root {
+        --white: #ffffff99;
+        --blue: #20B9E2;
+        --red: #F70B0B;
+        --black: #000000;
+        --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+        --font: 'Inconsolata', monospace;
+        --hide:  #ffffff01;
+}
+
+* {
+        margin: 0;
+        padding: 0;
+}
+
+html {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        font-family: var(--font);
+        color: var(--black); /* This is how you address a variable in CSS */
+        width: 100%;
+}
+
+body {
+        background: url(../images/Dominic_FirechiefBW.jpg) no-repeat center center fixed;
+        background-size: cover;
+}
+
+.container {
+        position: relative;
+        width: 90%;
+        height: 800px;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+
+        "header header"
+        "content content"
+        "footer footer";
+
+        margin: 0 auto;
+}
+
+/* Header Section Layout */
+.header {
+	-ms-grid-row: 1;
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 2;
+	grid-area: header;
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	-ms-grid-rows: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas:
+
+	"logo quote quote quote"
+	"navigation navigation navigation navigation";
+
+	height: 200px;
+}
+
+.logo {
+	-ms-grid-row: 1;
+	-ms-grid-column: 1;
+	position: relative;
+	grid-area: logo;
+	height: 180px;
+	z-index: -10;
+}
+
+#logoTitle {
+	position: relative;
+	top: 0;
+	text-align: center;
+	font-family: var(--font);
+	font-size: .1em;
+	color: var(--hide);
+}
+
+header img {
+	position: relative;
+	top: -120px;
+	width: 250px;
+	height: 400px;
+}
+
+.quote {
+	-ms-grid-row: 1;
+	-ms-grid-column: 2;
+	-ms-grid-column-span: 3;
+	grid-area: quote;
+	height: 100px;
+	margin: 45px 0 0 0;
+}
+
+.quote p {
+	background: rgba(104, 104, 104, 0.6);
+	-webkit-box-shadow: var(--shadow);
+	box-shadow: var(--shadow);
+	font-family: var(--font);
+	font-size: 2.5em;
+	color: var(--blue);
+	text-shadow: var(--shadow);
+}
+
+.navigation {
+	-ms-grid-row: 2;
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 4;
+	grid-area: navigation;
+	width: 100%;
+	height: 50px;
+}
+
+.navLinks {
+	position: relative;
+	bottom: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	width: 100%;
+	border: .5px solid var(--blue);
+	margin: 0;
+}
+
+.navLinks li {
+	position: relative;
+	bottom: 0px;
+	width: 25%;
+	height: 50px;
+	border: .5px solid var(--blue);
+	list-style-type: none;
+
+}
+
+.navLinks li a {
+	display: block;
+	background: #000000; 
+	border: .5px solid var(--blue);
+	color: var(--blue);
+	font-family: var(--font);
+	font-weight: bold;
+	line-height: 50px;
+	text-decoration: none;
+}
+
+.navLinks li a:hover {
+	background: var(--blue);
+	color: var(--black);
+	border: .5px solid var(--black);
+}
+
+.navLinks li a h3 {
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	margin: 0;
+}
+
+.selected {
+	background: var(--white);
+}
+
+.selected h3 {
+	color: var(--black);
+	font-weight: bolder;
+	text-align: center;
+	line-height: 50px;
+}
+
+/* Content Section Layout */
+.content {
+	-ms-grid-row: 2;
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 2;
+	position: relative;
+	top: 32px;
+	grid-area: content;
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 20% 35% 35%;
+	grid-template-columns: 20% 35% 35%;
+	-ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-areas:
+
+	"bioImg bioHead bioHead "
+	"bioImg bioPara bioPara"
+	"bioImg bioPara bioPara"
+	"bioImg bioPara bioPara"
+	"bioImg bioPara bioPara";
+
+	background: var(--white);
+	width: 100%;
+	padding: 0 0 30px 0;
+	margin: 0 0 33px 0;
+}
+
+.bioImg {
+	-ms-grid-row: 1;
+	-ms-grid-row-span: 5;
+	-ms-grid-column: 1;
+	grid-area: bioImg;
+	width: 100%;
+}
+
+.image {
+	width: 100%;
+	height: 425px;
+}
+
+figcaption p {
+	font-family: var(--font);
+	font-size: .9em;
+	font-weight: bold;
+	text-indent: 10px;
+	color: var(--black);
+	padding: 10px 0 0 0;
+}
+
+.bioHead {
+	-ms-grid-row: 1;
+	-ms-grid-column: 2;
+	-ms-grid-column-span: 2;
+	grid-area: bioHead;
+	background: var(--red);
+	height: 50px;
+	width: 100%;
+	padding: 0 0 0 14.3%;
+}
+
+.headers h2 {
+	position: relative;
+	top: 0;
+	font-family: var(--font);
+	font-size: 1.4em;
+	color: var(--blue);
+	line-height: 50px;
+}
+
+.bioPara {
+	-ms-grid-row: 2;
+	-ms-grid-row-span: 4;
+	-ms-grid-column: 2;
+	-ms-grid-column-span: 2;
+	grid-area: bioPara;
+	padding: 0 0 0 14.3%;
+}
+
+.bio {
+	-webkit-columns: 2 300px;
+	columns: 2 300px;
+	-webkit-column-gap: 2em;
+	column-gap: 2em;
+	width: 100%;
+	margin: 0;
+}
+
+.paragraphs {
+	font-family: var(--font);
+	font-size: 1em;
+	color: var(--black);
+}
+
+/* Footer Section Layout */
+.footer {
+	-ms-grid-row: 3;
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 2;
+	grid-area: footer;
+	position: fixed;
+	bottom: 0;
+	left: 5%;
+	width: 90%;
+	height: 70px;
+	background: var(--red);
+	margin: 0 auto 0 auto;
+}
+
+#footerNav {
+	position: relative;
+	top: 11px;
+	width: 100%;
+}
+
+.footLinks {
+	position: relative;
+	top: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	width: 100%;
+	height: 48px;
+	-webkit-box-pack: space-evenly;
+	-ms-flex-pack: space-evenly;
+	justify-content: space-evenly;
+	margin: 0;
+}
+
+.social {
+	position: relative;
+	top: 0;
+	height: 48px;
+	width: 48px;
+	list-style: none;
+}
+
+.copyright {
+	position: relative;
+	top: 35px;
+	height: 48px;
+	list-style: none;
+}
+
+#faceLink, #twitLink, #gooLink, #pinLink {
+	position: relative;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	line-height: 48px;
+	vertical-align: top;
+}
+
+#faceLink, #twitLink, #gooLink, #pinLink {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	line-height: 48px;
+	text-decoration: none;
+	vertical-align: top;
+}
+
+#faceLink {
+	background: url(../svg/faceLogoUp.svg) center no-repeat;
+}
+
+#faceLink:hover {
+	background: url(../svg/faceLogoOver.svg);
+}
+
+#twitLink {
+	background: url(../svg/twitLogoUp.svg) center no-repeat;
+}
+
+#twitLink:hover {
+	background: url(../svg/twitLogoOver.svg);
+}
+
+#gooLink {
+	background: url(../svg/gooLogoUp.svg) center no-repeat;
+}
+
+#gooLink:hover {
+	background: url(../svg/gooLogoOver.svg);
+}
+
+#pinLink {
+	background: url(../svg/pinLogoUp.svg) center no-repeat;
+}
+
+#pinLink:hover {
+	background: url(../svg/pinLogoOver.svg);
+}
+
+#socialFace, #socialTwit, #socialGoo, #socialPin {
+	position: relative;
+	top: 0;
+	text-align: center;
+	font-family: var(--font);
+	font-size: .1em;
+	color: var(--hide);
+}
+
+#socialFace span, #socialTwit span, #socialGoo span, #socialPin span {
+	position: absolute;
+	width: 100%;
+	height: 48px;
+}
+
+h6 {
+	position: relative;
+	bottom: 22px;
+	text-align: center;
+	font-size: 1.3em;
+	color: var(--blue);
+	font-family: var(--font);
+	font-weight: bold;
+	vertical-align: center;
+	margin: 0;
+}
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  
+/* CSS */     
+}
+      
+/* 
+	##Device = Tablets, Ipads (portrait)
+	##Screen = B/w 768px to 1024px
+*/
+      
+@media (min-width: 768px) and (max-width: 1024px) {
+	
+	/* CSS */
+}
+
+/* 
+	##Device = Low Resolution Tablets, Mobiles (Landscape)
+	##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+	
+	/* CSS */
+}
+
+/* 
+	##Device = Most of the Smartphones Mobiles (Portrait)
+	##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+	
+	/* CSS */
+}

@@ -1,0 +1,20 @@
+Understanding how to build and invoke functions will set the foundation for designing complex and highly scalable JavaScript solutions. 
+
+Instructions
+
+This week's assignment is all about functions and demonstrating your understanding of how to create them with and without parameters.  Using the provided starter code, complete the following:
+
+[X] Create a function called fullName with two parameters (first and last name) and a return the two parameters as one string.
+[X] Create a function called dateWriter with three parameters (year, month, and day) and return a new date using the passed-in values. 
+[X] Create a function called formatNumber with two parameters (number and numOfFixedPositions) and return the number with the number of fixed positions you specified in the second parameter. 
+[X] Create a function called convertToInt with one string parameter.  Parse the string parameter and return the value as an integer. 
+[X] Create a function called convertToFloat with one string parameter.  Parse the string parameter and return the value as a float. 
+[] Test each of these functions by calling them, passing in test values (yes this means you will need to create test variables), and outputting the results to the console window (yes, this means use the console.log() function to output the results)
+[] Run and test the program and make sure your output matches what I have 
+[] When you are happy with the output stage, commit, and push your code to GitHub 
+Starter Code: GitHub repo
+
+Deliverables for this assignment:
+
+Link to your GitHub repository
+<yourLastName>-<assignmentName>.js

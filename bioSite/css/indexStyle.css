@@ -1,0 +1,602 @@
+/* This is the CSS3 'index' File For Dominic's BioSite */
+
+:root {
+  --white: #ffffff99;
+  --blue: #20b9e2;
+  --red: #f70b0b;
+  --black: #000000;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  --font: "Inconsolata", monospace;
+  --hide: #ffffff01;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: var(--font);
+  color: var(--black); /* This is how you address a variable in CSS */
+  width: 100%;
+}
+
+body {
+  position: relative;
+  background: url(../images/scroll1.jpg) no-repeat center center fixed;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+header {
+    height: 200px;
+}
+
+header, .circle {
+  position: relative;
+  top: -20px;  
+}
+
+@media (min-width: 1281px) {
+  header, .circle {
+  top: -5px;
+  margin: 0;
+  }
+}
+
+.circle img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+@media (min-width: 1281px) {
+  .circle img {
+  /* CSS */
+  top: -42px;
+  width: 325px;
+  height: 250px;
+  }
+}
+
+.logo {
+  position: relative;
+  top: 0;
+  margin: 0;
+}
+
+.logo > h1 {
+  position: relative;
+  top: 60px;
+  text-align: center;
+  font-family: var(--font);
+  font-size: 0.1em;
+  color: var(--hide);
+}
+
+.quote {
+  position: relative;
+  top: 80px;
+  width: 100%;
+  height: 60px;
+}
+
+@media (min-width: 1281px) {
+  .quote {
+    top: 0;
+    grid-area: quote;
+    height: 100px;
+    margin: 45px 0 0 0;
+  }
+}
+
+.quote p {
+  background: rgba(104, 104, 104, 0.6);
+  -webkit-box-shadow: var(--shadow);
+  box-shadow: var(--shadow);
+  font-family: var(--font);
+  font-size: .8em;
+  color: var(--blue);
+  text-shadow: var(--shadow);
+}
+
+@media (min-width: 1281px) {
+  .quote p {
+    font-size: 2.5em;
+    margin-left: 25%;
+  }
+}
+.scrollControls {
+  margin: 0;
+}
+
+main {
+  position: relative;
+  top: 40px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+#navCenter {
+  position: relative;
+  top: -102px;
+  background: var(--blue);
+  width: 100%;
+}
+
+@media (min-width: 1281px) {
+  #navCenter {
+    top: 0;
+    height: 60px;
+  }  
+}
+
+#imgScroll {
+  position: relative;
+  top: 0;
+  margin: 0;
+}
+
+#mainNav {
+  position: relative;
+  top: 26px;
+  margin: 0;
+}
+
+@media (min-width: 1281px) {
+  /* CSS */
+  #mainNav {
+    top: 38px;
+  }
+}
+
+.navLinks {
+  position: relative;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  border: 0.5px solid var(--blue);
+  margin: 0;
+}
+
+.navLinks li {
+  position: relative;
+  bottom: 0px;
+  width: 25%;
+  height: 25px;
+  border: 0.5px solid var(--blue);
+  list-style-type: none;
+}
+
+@media (min-width: 1281px) {
+  /* CSS */
+  .navLinks li {
+    height: 50px;
+  }
+}
+
+.navLinks li a {
+  display: block;
+  background: #000000;
+  border: 0.5px solid var(--blue);
+  color: var(--blue);
+  font-family: var(--font);
+  font-weight: bold;
+  line-height: 25px;
+  text-decoration: none;
+}
+
+@media (min-width: 1281px) {
+  /* CSS */
+  .navLinks li a {
+    line-height: 50px;
+  }
+}
+
+.navLinks li a:hover {
+  background: var(--blue);
+  color: var(--black);
+  border: 0.5px solid var(--black);
+}
+
+.navLinks li a h3 {
+  width: 100%;
+  height: 25px;
+  text-align: center;
+  font-size: .7em;
+  margin: 0;
+}
+
+@media (min-width: 1281px) {
+  /* CSS */
+  .navLinks li a h3 {
+    font-size: 1.2em;
+    height: 50px;
+  }
+}
+
+.selected {
+  background: white;
+}
+
+.selected h3 {
+  color: var(--black);
+  font-weight: bolder;
+  text-align: center;
+  font-size: .7em;
+  line-height: 25px;
+}
+
+@media (min-width: 1281px) {
+  /* CSS */
+  .selected h3 {
+    font-size: 1.2em;
+    line-height: 50px;
+  }
+}
+
+#infoBuckets {
+  position: relative;
+  top: -75px;
+  display: block;
+  width: 100%;
+}
+
+@media (min-width: 1281px) {
+  /* CSS */
+  #infoBuckets {
+    top: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 0 0 40px 0;
+  }
+}
+
+.buckets {
+  background: var(--white);
+  width: 100%;
+  height: 280px;
+}
+
+@media (min-width: 1281px) {
+  /* CSS */
+  .buckets {
+    width: 31%;
+    height: 380px;
+  }
+}
+
+.images,
+.headers {
+  width: 100%;
+  margin: 0;
+}
+
+
+.images {
+  height: 50px;
+}
+
+@media (min-width: 1281px) {
+  /* CSS */
+  .images {
+    height: 100px;
+  }
+}
+
+.headers {
+  position: relative;
+  top: -4px;
+  height: 25px;
+  background: var(--red);
+}
+
+@media (min-width: 1281px) {
+  /* CSS */
+  .headers {
+    top: -4px;
+    height: 50px;
+  }
+}
+
+.headers h2 {
+  color: var(--blue);
+  font-family: var(--font);
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 25px;
+  text-indent: 10px;
+  margin: 0;
+}
+
+@media (min-width: 1281px) {
+  /* CSS */
+  .headers h2 {
+    font-size: 30px;
+    line-height: 50px;
+    text-indent: 25px;
+  }
+}
+
+.paragraphs {
+  padding: 10px;
+  font-family: var(--font);
+  font-size: .8em;
+}
+
+@media (min-width: 1281px) {
+  /* CSS */
+  .paragraphs {
+    padding: 20px;
+    font-size: 1em;
+  }
+}
+
+.buttons {
+  position: relative;
+  top: 20px;
+  margin: 0 auto;
+  height: 25px;
+  width: 80%;
+}
+
+@media (min-width: 1281px) {
+  /* CSS */
+  .buttons {
+    top: 0;
+    height: 50px;
+  }
+}
+
+.buttons a {
+  position: absolute;
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+  color: var(--blue);
+  background: var(--black);
+  line-height: 25px;
+  text-align: center;
+}
+
+@media (min-width: 1281px) {
+  /* CSS */
+  .buttons a {
+    line-height: 50px;
+  }
+}
+
+.buttons a:hover {
+  color: var(--black);
+  background: var(--blue);
+}
+
+.buttons a h3 {
+  position: relative;
+  top: 0;
+  font-family: var(--font);
+  font-size: .7em;
+}
+
+@media (min-width: 1281px) {
+  /* CSS */
+  .buttons a h3 {
+    font-size: 1.2em;
+  }
+}
+
+/* Footer Section Layout */
+.footer {
+  grid-area: footer;
+  position: fixed;
+  bottom: 0;
+  left: 5%;
+  width: 90%;
+  height: 70px;
+  background: var(--red);
+  margin: 0 auto 0 auto;
+}
+
+#footerNav {
+  position: relative;
+  top: 11px;
+  width: 100%;
+}
+
+.footLinks {
+  position: relative;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 48px;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  margin: 0;
+}
+
+.social {
+  position: relative;
+  top: 0;
+  height: 48px;
+  width: 48px;
+  list-style: none;
+}
+
+.copyright {
+  position: relative;
+  top: 35px;
+  height: 48px;
+  font-size: .7em;
+  list-style: none;
+}
+
+@media (min-width: 1281px) {
+  /* CSS */
+  .copyright {
+    font-size: 1.2em;
+  }
+}
+
+#faceLink,
+#twitLink,
+#gooLink,
+#pinLink {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  line-height: 48px;
+  text-decoration: none;
+  vertical-align: top;
+}
+
+#faceLink {
+  background: url(../svg/faceLogoUp.svg) center no-repeat;
+}
+
+#faceLink:hover {
+  background: url(../svg/faceLogoOver.svg);
+}
+
+#twitLink {
+  background: url(../svg/twitLogoUp.svg) center no-repeat;
+}
+
+#twitLink:hover {
+  background: url(../svg/twitLogoOver.svg);
+}
+
+#gooLink {
+  background: url(../svg/gooLogoUp.svg) center no-repeat;
+}
+
+#gooLink:hover {
+  background: url(../svg/gooLogoOver.svg);
+}
+
+#pinLink {
+  background: url(../svg/pinLogoUp.svg) center no-repeat;
+}
+
+#pinLink:hover {
+  background: url(../svg/pinLogoOver.svg);
+}
+
+#socialFace,
+#socialTwit,
+#socialGoo,
+#socialPin {
+  position: relative;
+  top: 0;
+  text-align: center;
+  font-family: var(--font);
+  font-size: 0.1em;
+  color: var(--hide);
+}
+
+#socialFace span,
+#socialTwit span,
+#socialGoo span,
+#socialPin span {
+  position: absolute;
+  width: 100%;
+  height: 48px;
+}
+
+h6 {
+  position: relative;
+  bottom: 22px;
+  text-align: center;
+  font-size: 1.3em;
+  color: var(--blue);
+  font-family: var(--font);
+  font-weight: bold;
+  vertical-align: center;
+  margin: 0;
+}
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  /* CSS */
+  
+}

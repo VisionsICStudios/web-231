@@ -1,0 +1,73 @@
+<!--
+============================================
+; Title:  Discussion 8.1 - DOM Manipulation (jQuery)
+; Author: Andrew Hemminger
+; Date:   31 January 2019
+; Modified By: Aaron Wilson
+; Description: HTML page utilizing jQuery
+;===========================================
+-->
+
+<!--Expected Output:
+  The <p> elements should only highlight
+  on single click and remove highlight
+  on double click.
+  Bonus Hint: https://www.w3schools.com/jquery/event_toggle.asp
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 8.1 - DOM Manipulation (jQuery)</title>
+<!-- ** Referencing jQuery library version 3.2.1 ** -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<h1>Click below to highlight your favorite verse!</h1>
+
+<p>In dignissim massa metus, id gravida ante congue eget.
+  Nunc ullamcorper odio vitae ex hendrerit, pharetra cursus lacus gravida.
+  Aliquam sagittis, massa ut tempor ullamcorper, eros ipsum accumsan massa,
+  in faucibus ipsum enim id sapien. Phasellus vel congue mauris. Orci varius
+  natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+<h2>Donec eget posuere felis.</h2>
+
+<p>Nunc id sagittis mi. Nunc nec urna eu mi auctor varius.
+    Etiam dapibus, ligula eu pellentesque feugiat, dolor magna tincidunt eros,
+    sit amet condimentum quam lectus non urna.
+</p>
+
+<p>Mauris convallis dui augue, nec vehicula lectus lacinia a.
+  Morbi fermentum dui in risus tristique consequat. Suspendisse a
+  imperdiet neque. Nulla eu mauris in magna ornare semper non et felis.
+  Integer sollicitudin volutpat tellus non faucibus.</p>
+
+<script>
+// Click method for highlighting text
+    $(function () {
+        $("p").click(function () {
+            $(this).css("background-color", "yellow");
+            $(this).css("color", "black");
+        });
+    });
+// Double-Click method to remove highlight from text
+    $(function () {
+        $("p").dblclick(function () {
+            $(this).css("background-color", "white");
+            $(this).css("color", "black");
+        });
+    });
+// **Utilizing the toggle method**
+$("p").toggle(
+  function(){$("p").css({"color": "orange"});},
+  function(){$("p").css({"color": "red"});},
+  function(){$("p").css({"color": "black"});
+});
+</script>
+
+</body>
+</html>

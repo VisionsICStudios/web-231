@@ -1,0 +1,150 @@
+<!--
+/*
+============================================
+; Title: wilsonA-discussion-8.1.html
+; Author: Aaron Wilson
+; Date:   31 January 2019
+; Description: JQuery Website Errors
+;===========================================
+*/
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My Simple Webpage</title>
+  <xxxx src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></xxxx>
+  <link rel="stylesheet" href="myStyle.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logo.svg">
+    </div>
+    <div class="adHead">
+        <img src="images/main-ad.png">
+    </div>
+  </header>
+  <section class="headNav">
+    <nav class="mainNav">
+      <ul>
+        <li class="home">
+          <a href="#" id="homeBtn" class="homePage">Home</a>
+        </li>
+        <li class="about">
+          <a href="#" id="aboutBtn" class="aboutPage">About</a>
+        </li>
+        <li class="news">
+          <a href="#" id="newsBtn" class="newsPage">News</a>
+        </li>
+        <li class="contact">
+          <a href="#" id="contactBtn" class="contactPage">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </section>
+
+  <section id="intro">
+    <h1>Welcome To Simple Site JQuery</h1>
+  </section>
+
+  <section id="container">
+    <section id="homePage">
+      <div>
+        <figure>
+          <img src="images/home.png" alt="home picture" id="newsImg">
+          <figcaption>All the home info is found in this section</figcaption>
+        </figure>
+      </div>
+      <div>
+        <p id="homePara">
+          Welcome to My Simple website's Home page. It is at this page where the information for all the
+          latest events and header info will be showcased for all the visitors of this website to see and
+          marvel at. I am filled with the inspiration and gratitude to be able to start to develop the
+          knowledge and skills to begin to design and develop awesome websites like this.
+        </p>
+      </div>
+    </section>
+    <section id="aboutPage">
+      <div>
+        <figure>
+          <img src="images/about.png" alt="about picture" id="aboutImg">
+          <figcaption>All the about info is found in this section</figcaption>
+        </figure>
+      </div>
+      <div>
+        <p id="aboutPara">
+          Welcome to My Simple website's About page. It is at this page where the information for all the
+          unique things about this company that controls this website. It is of my choice to decide what to
+          use as my data for this about page. It obviously needs to be different then every other page to
+          make it stand out from the other sections of this web site.
+        </p>
+      </div>
+    </section>
+    <section id="newsPage">
+      <div>
+        <figure>
+          <img src="images/news.png" alt="news picture" id="newsImg">
+          <figcaption>All the news info is found in this section</figcaption>
+        </figure>
+      </div>
+      <div>
+        <p id="newsPara">
+          Welcome to My Simple website's News page. It is at this page where the information for all the
+          latest news for this website will be displayed for everyone to see. I am just sitting here
+          developing all the necessary text and content needed to create the appearance of a solid
+          foundation of data for each web page.
+        </p>
+      </div>
+    </section>
+    <section id="contactPage">
+      <div>
+        <figure>
+          <img src="images/contact.png" alt="contact picture" id="contactImg">
+          <figcaption>All the contact info is found in this section</figcaption>
+        </figure>
+      </div>
+      <div>
+        <p id="contactPara">
+          Welcome to My Simple website's Contact page. It is at this page where the contact information
+          for all the company's different means of contact forms, devices, or outlets to follow to be
+          able to reach a business member involved with this site. I am in awe at the human mind's ability
+          to take in information and absorb it so that I learn all the techniques needed to be a developer.
+        </p>
+      </div>
+    </section>
+  </section>
+
+  <xxxx>
+
+    // I created all Jquery code here!
+    // Optional code to hide all sections
+    $("#container > section").hide();
+
+    // Create a pages Selector
+    let myPages = $("#homePage, #aboutPage, #newsPage, #contactPage");
+
+    // Show chosen div, and hide all others
+    $("li a").onclick(function () {
+      $(pages).hide();
+      $("#" + $(this).attr("class")).show();
+      $("#intro").hide();
+    });
+  </xxxx>
+
+
+  <section class="footer">
+    <footer>
+      <ul class="liLink">
+        <li class="footLink">Affiliates</li>
+        <li class="footLink">Careers</li>
+        <li class="footLink">Community</li>
+        <li class="footLink">Site Map</li>
+      </ul>
+    </footer>
+  </section>
+</body>
+</html>

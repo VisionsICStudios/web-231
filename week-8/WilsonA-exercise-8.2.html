@@ -1,0 +1,117 @@
+<!--
+============================================
+; Title: wilsonA-exercise-8.2.html
+; Author: Professor Krasso
+; Date: 29 January 2019
+; Modified By: Aaron Wilson
+; Description: Dynamic HTML Content.
+;===========================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WilsonA Exercise 8.2</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <style type="text/css">
+    body {
+      position: relative;
+      display: inline-block;
+      font-family: 'Roboto', sans-serif;
+      width: 100%;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    ul {
+      position: relative;
+      top: 0;
+      list-style: none;
+      width: 100px;
+      text-align: left;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    h2 {
+      position: relative;
+      top: 0;
+      left: 0;
+      text-indent: -35px;
+      margin: 0 auto 20px auto;
+    }
+
+    li {
+      font-size: 1em;
+      color: orange;
+    }
+
+    #fruits {
+      display: block;
+      position: fixed;
+      top: 0;
+      text-align: center;
+      width: 100%;
+      border-top: 50px solid orange;
+      padding: 20px 0 0 0;
+    }
+  </style>
+</head>
+<body>
+
+<div id="fruits"></div>
+
+<script>
+
+  // A null fruits variable to be passed as a sole parameter and mutated into an array of fruit objects to use in the getFruits function.
+  let fruits = null;
+
+  // Build the getFruits function.
+  function getFruits(arr) {
+
+    // The arr parameter mutated into an array of fruit objects.
+    arr = [
+    {
+      id: 1,
+      type: 'apple'
+    },
+    {
+      id: 2,
+      type: 'pear'
+    },
+    {
+      id: 3,
+      type: 'peach'
+    },
+    {
+      id: 4,
+      type: 'lime'
+    },
+    {
+      id: 5,
+      type: 'lemon'
+    }
+  ];
+
+    // Create a variable called data that dynamically outputs the necessary content as HTML elements.
+    let data = "<h2>Fruits</h2><ul>";
+
+      // Loop through the array, iterating over the id and type properties of each fruit object.
+      for (var i = 0; i < arr.length; i++) {
+          data += "<li>" + arr[i].id + ".  " + arr[i].type + "</li>";
+      }
+
+      // Adding on more HTML elements mutated by the data variable.
+      data += "</ul>";
+
+      // Return to the browser the complete output of the data variable.
+      return document.getElementById('fruits').innerHTML = data;
+  }
+
+  // Call the getFruits function passing in the null fruits variable.
+  getFruits(fruits);
+</script>
+
+</body>
+</html>

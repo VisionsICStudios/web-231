@@ -1,0 +1,111 @@
+<!--
+============================================
+; Title:  wilsonA-assignment-8.4.html
+; Author: Professor Krasso
+; Date: 2 February 2019
+; Modified By: Aaron Wilson
+; Description: Putting it all Together.
+;===========================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WilsonA Assignment 8.4</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- you will need to the href to point to your root directories css file -->
+  <link rel="stylesheet" href="../site.css">
+
+  <style type="text/css">
+    #employee {
+      position: relative;
+      margin: 20px auto 0 auto;
+    }
+    #employee tbody tr:hover {
+      cursor: pointer;
+      background-color: #ffff99;
+    }
+  </style>
+</head>
+<body>
+
+<div id="emps"></div>
+
+<script type="text/javascript">
+
+// Create an null variable named employees that will be mutable to an array.
+null;
+
+// Build an Employee object constructor function.
+function Employee (id, firstName, lastName, title) {
+  this.id = id;
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.title = title;
+}
+
+// Create the new Employee objects as the employees array.
+let employees = [
+  new Employee(1, 'Lighting', 'McQueen', 'Piston Cup Racer'),
+  new Employee(2, 'Owen', 'Wilson', 'Actor'),
+  new Employee(3, 'David', 'Banner', 'Incredible Hulk'),
+  new Employee(4, 'Bill', 'Gates', 'CEO/Microsoft'),
+  new Employee(5, 'Gene', 'Simmons', 'KISS Lead Singer')
+];
+
+// Build a getEmployee function.
+let getEmployee = (id) => {
+
+  // Create a forEach loop to iterate through the employees array of Employee objects.
+  employees.forEach(function(emp) {
+
+    // Make a condition to test if the current index value in the loop matches the current id value passed in as a parameter.
+    if(emp.id === id) {
+
+      // Return the alert box function to output the matching iterated value as the id parameter to the getEmployee function.
+      return alert('You clicked on Employee: ' + emp.id + ', ' + emp.firstName + ', ' + emp.lastName + ', ' + emp.title + '.');
+    }
+  });
+}
+
+// Create a function to work as an assembly line to output the employees.
+const outputEmployees = (arr) => {
+
+  // Create a mutable variable called output that dynamically outputs the necessary content as HTML elements.
+  let output = '<table id="employee"><thead><tr><th>Id</th><th>First Name</th><th>Last Name</th><th>Title</th></tr></thead><tbody>';
+
+  // Output the for loop iterations of the employees array as the arr parameter concatenated with strings of HTML elements added to the output variable.
+  for (let i = 0; i < arr.length; i++) {
+   output += '<tr><td>' + arr[i].id + '</td><td>' + arr[i].firstName + '</td><td>' + arr[i].lastName + '</td><td>' + arr[i].title + '</td></tr>';
+  }
+
+   // Adding on more HTML elements mutated by the table variable.
+   output += "</tbody></table>";
+
+   // Return to the browser the complete output of the output variable to the emps div.
+   return document.getElementById('emps').innerHTML = output;
+}
+
+// Call the outputEmployees function to produce output.
+outputEmployees(employees);
+
+  // jQuery onClick event
+  // Don't remove this, just add your code to the body of the event (curly braces)
+  $(function () {
+
+    // JQuery click function is created to alert box the data contents of the hovered row of the table when clicked.
+    $("table tr").click(function () {
+
+      // Create a mutable id variable that is equal to the hovered Employee object in the table row.
+      let id = $(this).find("td:first").html();
+
+      // Call the getEmployee function, passing in the parseInt function as a parameter and the id variable as the parameter to it.
+      getEmployee(parseInt(id)); // The reason parseInt is used is because as the id variable is clicked to be compared in the condition, it is seen as a string.
+    })
+  });
+</script>
+</body>
+</html>

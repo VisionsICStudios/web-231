@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- saved from url=(0113)https://cyberactive.bellevue.edu/courses/1/WEB231-339S_2191_DD/db/_34960599_1/embedded/cousar-assignment-8.1.html -->
+<html lang="en" class="gr__cyberactive_bellevue_edu"><link type="text/css" id="dark-mode" rel="stylesheet" href="https://cyberactive.bellevue.edu/courses/1/WEB231-339S_2191_DD/db/_34960599_1/embedded/cousar-assignment-8.1.html"><style type="text/css" id="dark-mode-custom-style"></style><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>jQuery Click</title>
+
+    </head><body data-gr-c-s-loaded="true"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+<div>
+    <p>Click the unordered list to change the color to blue</p>
+    <ul>
+        <li>Test Data</li>
+        <li>Test Data</li>
+        <li>Test Data</li>
+    </ul>
+
+    <p>Click the ordered list to change the color to brown</p>
+    <ol>
+        <li>Test Data</li>
+        <li>Test Data</li>
+        <li>Test Data</li>
+    </ol>
+</div>
+<br>
+
+<!-- Changes background color and font color when clicking in list areas -->
+<script>
+    $(function () {
+        $("ul").click(function () {
+          $(this).css("background-color", "blue");
+          $(this).css("color", "white");
+        });
+        $("ol").click(function () {
+            $(this).css("background-color", "brown");
+            $(this).css("color", "white");
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
